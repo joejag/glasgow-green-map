@@ -1,0 +1,20 @@
+<%= render :partial => "layouts/map_nav" %>
+
+<h1>Listing on Category: <%= @places.first.category.name %></h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  
+<% for place in @places %>
+  <tr>
+    <td><%= link_to place.name, :action => 'show', :id => place %></td>
+  </tr>
+<% end %>
+</table>
+
+<p>
+<%= will_paginate @places %>
+</p>
+

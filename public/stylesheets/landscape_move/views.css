@@ -1,0 +1,477 @@
+/* ---- views.css ----- */
+/* ---- This CSS file defines styles for the views ----  */
+/* ---- Created 5/09/08 by John Gallagher ---- */
+
+/* ---- For places listing ---- */
+
+/* ---- Image replacement for table headings ---- */
+
+table.PlacesListTable th div span{
+	display:none;
+}
+
+table.PlacesListTable th div.VolOpps{
+	padding:0;
+	margin:0;
+	background: url('/images/categoryheadings/VolOpps.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+
+table.PlacesListTable th div.Textiles{
+	padding:0;
+	margin:0;
+	background: url('/images/categoryheadings/Textiles.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.Clothes{
+	padding:0;
+	margin:0;
+	background: url('/images/categoryheadings/Clothes.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.Books{
+	padding:0;
+	margin:0;
+	background: url('/images/categoryheadings/Books.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.BricaBrac{
+	padding:0;
+	background: url('/images/categoryheadings/BricaBrac.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.BabyWear{
+	background: url('/images/categoryheadings/BabyWear.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.SElec{
+	background: url('/images/categoryheadings/SElec.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.LElec{
+	background: url('/images/categoryheadings/LElec.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.SFurn{
+	background: url('/images/categoryheadings/SFurn.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.LFurn{
+	background: url('/images/categoryheadings/LFurn.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.Carpets{
+	background: url('/images/categoryheadings/Carpets.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.Bikes{
+	background: url('/images/categoryheadings/Bikes.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.IT{
+	background: url('/images/categoryheadings/IT.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.Ink{
+	background: url('/images/categoryheadings/Ink.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.Wood{
+	background: url('/images/categoryheadings/Wood.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.Mobiles{
+	background: url('/images/categoryheadings/Mobiles.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+table.PlacesListTable th div.EnvOrg{
+	background: url('/images/categoryheadings/EnvOrg.gif') no-repeat top center;
+	height:100px;
+	width:30px;
+}
+
+table.PlacesListTable th{
+	background: #9BCF50;
+	padding:0;
+	margin:0;
+}
+
+div#ResultsFormat{
+	width:794px;
+	padding:0px;
+	margin:0px;
+	padding: 10px;
+	float:left;
+}
+
+/* ---- Styling for the results list view ---*/
+div.Header{
+	background: #9BCF50;
+	font-weight:bold;
+}
+
+div.ResultsContainerList{
+	background: #CDE985;
+	width:794px;
+	padding:0px;
+	margin:0px;
+	float:left;
+}
+
+div.ResultItemContainerList{
+	width:774px;
+	margin-left:0px;
+	margin-right:0px;
+	float:left;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+div.ResultItemNumberList{
+	width:20px;
+	margin-left:0;
+	margin-right:0px;
+	float:left;
+}
+
+div.ResultItemNameList{
+	width:230px;
+	margin-left:0;
+	margin-right:0px;
+	float:left;
+}
+div.ResultItemAddressList{
+	width:134px;
+	margin-left:0;
+	margin-right:0px;
+	float:left;
+	
+}
+div.ResultItemPostcodeList{
+	width:70px;
+	margin-left:0;
+	margin-right:0px;
+	float:left;
+	
+}
+div.ResultItemTagsList{
+	width:240px;
+	margin-left:0;
+	margin-right:0px;
+	float:left;
+	
+}
+div#ResultItemTag{
+	width:15px;
+	height:15px;
+	margin-left:0;
+	margin-right:0px;
+	float:left;
+}
+div.ResultItemDistanceList{
+	width:80px;
+	margin-left:0;
+	margin-right:0px;
+	float:left;
+}
+
+div.ResultsContainerList span.inner{
+	display:none;
+}
+
+/* ---- Styling for the results boxes view ---*/
+
+div.ResultsContainerBox{
+	background: transparent;
+	width:794px;
+	padding:0px;
+	margin:0px;
+	float:left;
+}
+
+div.ResultItemContainerBox{
+	background:#9BCF50;
+	width:160px;
+	margin-left:0px;
+	margin-right:0px;
+	float:left;
+	padding:18px;
+	padding-right:10px;
+	
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:10px;
+	margin-bottom:10px;
+}
+
+div.ResultItemNumberBox{
+	width:25px;
+	height:36px;
+	margin-left:-5px;
+	margin-right:11px;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0;
+	padding-bottom:5px;
+	font-size:200%;
+	float:left;
+	text-align:center;
+}
+/* Centering text trick: http://www.jakpsatweb.cz/css/priklady/vertical-align-valid-solution-en.html */
+
+div.ResultItemNameMiddleBox{
+	position: absolute; top: 50%; /* for explorer only*/
+	display: table-cell; vertical-align: middle; position: static;
+}
+
+div.ResultItemNameInnerBox{
+	position: relative; top: -50%; /* for explorer only */
+	font-weight:bold;
+}
+
+
+div.ResultItemNameBox{
+	overflow: hidden; position: relative;
+	display: table; position: static;
+	
+	width:128px;
+	height:36px;
+	margin:0;
+	padding:0;
+	padding-bottom:5px;
+	float:left;
+}
+div.ResultItemAddressBox{
+	width:128px;
+	margin-left:31px;
+	margin-right:0px;
+	padding:0;
+	float:left;
+	
+}
+div.ResultItemPostcodeBox{
+	width:128px;
+	margin-left:31px;
+	margin-right:0px;
+	padding:0;
+	padding-bottom:5px;
+	float:left;
+	
+}
+div.ResultItemTagsBox{
+	width:106px;
+	height:30px;
+	margin-left:31px;
+	margin-right:0px;
+	padding:0;
+	padding-bottom:5px;
+	float:left;
+	
+}
+div#ResultItemTag{
+	width:15px;
+	height:15px;
+	margin-left:0;
+	margin-right:0px;
+	float:left;
+}
+div.ResultItemDistanceBox{
+	font-weight:bold;
+	width:128px;
+	margin-left:31px;
+	margin-right:0px;
+	padding:0;
+	float:left;
+}
+
+
+div.ResultsContainerBox span.inner{
+	display:none;
+}
+
+
+/* ---- Image replacement for cat icons in cells --- */
+
+table.PlacesListTable td div span.inner{
+	display:none;
+}
+
+table.PlacesListTable td div{
+	height:15px;
+	width:15px;
+}
+
+div#resultboxes div.tagicon span.inner{
+	display:none;
+}
+
+div#resultboxes div.tagicon{
+	height:15px;
+	width:15px;
+}
+
+div#resultboxes h2{
+	margin-bottom:0px;
+}
+
+/* ---- Image replacement for ticks in cells --- */
+
+/*table.PlacesListTable td div span{
+	display:none;
+}
+
+table.PlacesListTable td div{
+	background: url('../../images/categoryicons/10.png') no-repeat center center;
+	height:20px;
+	width:30px;
+}
+*/
+
+table.PlacesListTable td {
+	background: #DCFCB3;
+	padding:0;
+	margin:0;
+}
+
+
+/* ---- For place show ----*/
+
+div.PlaceShowRight div#map-search{
+/*	visibility:hidden; 
+	background:#B00; */
+}
+
+
+div.PlaceShowLeft h2 {margin-top: 10px; margin-bottom: 0px;}
+div.PlaceDetailsLink {padding-top: 0px; padding-bottom: 1em;}
+div.PlaceDetailsAddress,div.PlaceDetailsTelephone,div.PlaceDetailsCategory,div.PlaceDetailsOpeningHours,div.PlaceDetailsSupplies, div.PlaceDetailsNavigation {padding-top: 0.5em; padding-bottom: 0.5em;}
+
+
+div.Tag1WithIcon{ padding-left: 20px; background: url('/images/categoryicons/1.png') no-repeat center left }
+div.Tag2WithIcon{ padding-left: 20px; background: url('/images/categoryicons/2.png') no-repeat center left }
+div.Tag3WithIcon{ padding-left: 20px; background: url('/images/categoryicons/3.png') no-repeat center left }
+div.Tag4WithIcon{ padding-left: 20px; background: url('/images/categoryicons/4.png') no-repeat center left }
+div.Tag5WithIcon{ padding-left: 20px; background: url('/images/categoryicons/5.png') no-repeat center left }
+div.Tag6WithIcon{ padding-left: 20px; background: url('/images/categoryicons/6.png') no-repeat center left }
+div.Tag7WithIcon{ padding-left: 20px; background: url('/images/categoryicons/7.png') no-repeat center left }
+div.Tag8WithIcon{ padding-left: 20px; background: url('/images/categoryicons/8.png') no-repeat center left }
+div.Tag9WithIcon{ padding-left: 20px; background: url('/images/categoryicons/9.png') no-repeat center left }
+div.Tag10WithIcon{ padding-left: 20px; background: url('/images/categoryicons/10.png') no-repeat center left }
+div.Tag11WithIcon{ padding-left: 20px; background: url('/images/categoryicons/11.png') no-repeat center left }
+div.Tag12WithIcon{ padding-left: 20px; background: url('/images/categoryicons/12.png') no-repeat center left }
+div.Tag13WithIcon{ padding-left: 20px; background: url('/images/categoryicons/13.png') no-repeat center left }
+div.Tag14WithIcon{ padding-left: 20px; background: url('/images/categoryicons/14.png') no-repeat center left }
+div.Tag15WithIcon{ padding-left: 20px; background: url('/images/categoryicons/15.png') no-repeat center left }
+div.Tag16WithIcon{ padding-left: 20px; background: url('/images/categoryicons/16.png') no-repeat center left }
+div.Tag17WithIcon{ padding-left: 20px; background: url('/images/categoryicons/17.png') no-repeat center left }
+
+/* Places List Filter Form */
+
+#filter {padding:20px; padding-bottom:5px;padding-top:10px;}
+
+#filter h3 {margin: 0; margin-top:5px; margin-bottom:5px;}
+
+#filter form p {
+	margin: 5px 0;
+}
+
+
+form#second {
+	padding:0;
+	margin:0px;
+}
+
+form#second input.submit{
+	text-align:center;
+	height:100px;
+	margin-top:10px;
+	margin-right:0px;
+	margin-left:auto;
+	
+}
+
+form#second input.text{
+	padding:2px;
+	line-height:100%;
+	font-size:12px;
+	width:150px;
+}
+form#second select#locate_tag{
+	padding:2px;
+	line-height:100%;
+	font-size:12px;
+	width:200px;
+}
+
+form#second select#locate_miles{
+	padding:2px;
+	line-height:100%;
+	font-size:12px;
+	width:50px;
+}
+
+form#second input.text:focus, form#second select:focus {
+	border-color: #bdb;
+}
+
+div#breadcrumbscontain{padding:20px; padding-top:5px; padding-bottom:5px;}
+
+div#breadcrumbscontain p {
+	margin: 0;
+}
+#search_spinner{margin:0px; padding:0; padding-top:5px;}
+
+
+div#aboutInfo {
+	display:none;
+}
+
+/* Tooltips for place tags */
+
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	padding:5px 9px;
+	color:#333;
+	display:none;
+	z-index: 999;
+}
+
+#tooltip {
+	text-align:left;
+}
+
+#tooltip dl {
+	margin: 0 0 0.3em;
+}
+
+#tooltip dt{
+	border-bottom:1px solid #666;
+	margin-bottom:4px;
+}
+
+#tooltip dd{
+	font-size:0.9em;
+	text-align:left;
+	line-height: 1.1;
+	margin-left: 0;
+}

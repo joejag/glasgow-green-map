@@ -1,0 +1,9 @@
+/*blueprint hacks
+1.To remove default top margin
+2.
+*/
+
+html{ margin-top:-20px; }
+
+.span-24-bh { width: 378px;
+	float:left;}

@@ -1,0 +1,22 @@
+body {
+	text-align: center;
+	margin-top: 0;
+}
+div.container {
+	text-align: left;
+}
+div#overlaymap {
+	padding: 0 0 0 16px;
+}
+div#search {
+	margin-left: 32px;
+	margin-right: -32px;
+	background: none;
+}
+div#search, div#search div.inner {
+	position: static;
+}
+div#greeninfo {
+	margin-left: 56px;
+	margin-right: -56px;
+}

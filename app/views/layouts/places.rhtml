@@ -1,0 +1,13 @@
+<%= render :partial => "layouts/htmlstart" %>
+<body>
+	<div class="container">
+		<div id="block-one" style="height:137px">
+			<%= render :partial => "layouts/nav" %>
+		</div>
+		<div id="loading" style="display: none;">Loading content...</div>
+		<div id="block-two" style="padding:0px">
+		<%= flash[:notice] %>
+		<%= yield  %>
+		</div>
+	</div>
+<%= render :partial => "layouts/htmlfinish" %>

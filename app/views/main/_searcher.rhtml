@@ -1,0 +1,27 @@
+<div id="search" class="clear span-16 push-3">
+	<div class="inner prepend-1 append-1">
+	<h2>Search</h2>
+	  <form id="first" action="<%= @context %>main/ajaxian"  method="post" onsubmit="
+	    var val = unescape($j('input#locate_postcode').val())
+  		var milesval = document.getElementById('locate_miles').value;
+  		var tagval = document.getElementById('locate_tag').value;
+  		myOldNavigate(val + '||' + milesval + '||' + tagval);
+  		return false;">
+		<p>
+	  	    <label for="locate_postcode">Find Recycling and Reuse Facilities</label>
+	  	    <%= text_field 'locate', 'postcode', :value => 'street / postcode', :class => 'text' , :title => 'street / postcode', :tabindex => 3 %>
+	  	</p>
+		<p>
+			<%= collection_select("locate", "miles", getSearchWithinAreaOptions, "value", "label", {:prompt => 'within an area of ...'}, {:tabindex => 4}) %>
+		</p>
+		<p>
+			<%= collection_select("locate", "tag" , @tags, "id", "name", {:prompt => "Find Some..."}, {:tabindex => 5}) %>
+		</p>
+		<p>
+			<%= submit_tag "Go!" , {:tabindex => '6'}%>
+			<%= image_tag("ajax-loader.gif", :style => "display:none;", :id => "search_spinner", :alt => "spinner") %>
+		</p>
+	</form>
+	</div>
+</div>
+

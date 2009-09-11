@@ -1,0 +1,2 @@
+module PhotosPlacesHelper
+end

@@ -1,0 +1,23 @@
+<SCRIPT language="JavaScript">
+
+function sleep (secs, callback) {
+// sleep returns by calling a’s callback
+setTimeout(callback, secs * 1000);
+}
+
+var parts = [
+<% @postcodes.sort.each do |p| %>
+  '<%= p.to_s %>',
+<% end %>
+]
+
+var current = -1;
+function addItJim() {
+	current++;
+	if(current == parts.length) document.write("Finished geocoding " + current + " postcodes: <a href='copy'>Copy</a>");
+	usePointFromPostcode(parts[current], writePointToDatabase, '<%= @context %>', '');
+}
+
+addItJim()
+
+</SCRIPT>

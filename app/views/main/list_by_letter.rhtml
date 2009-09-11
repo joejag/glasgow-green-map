@@ -1,0 +1,30 @@
+<h1>Listing All Places</h1>
+
+<%= render :partial => "main/by_letter" %>
+
+<% if @places.size != 0 %>
+	<div id="search_result_text" style="text-align: left;">
+    <p>Listing <b><%= @places.size %></b> Charity Shops in Glasgow beginning with <b><%= h(@letter) %></b></p>
+	</div>
+	<p>&nbsp;</p>
+	
+	<% for place in @places %>
+	<div id="search_result" style="text-align: left;">
+	<p ><b><%= link_to place.name, :controller => 'places', :action => 'show', :id => place %></b>, 
+	<%= place.category.name %></p>
+	<% if(not place.url.nil?) %>
+	<p><b>Website: </b><a href="<%= normalize_webaddress(place.url) %>"><%= place.url %></a></p>
+	<% end%>
+	<p><b>Address:</b> <%=h convert_address(place) + ', ' + place.postcode %></p>
+	<p><b>Telephone:</b> <%= place.telephone %></p>
+	<p><i><% for tag in place.tags %><%=tag.name%> <% end %></i></p>
+	<p>&nbsp;</p>
+	</div>
+	<% end %>
+	
+	
+<% else %>
+  <h4>No Charity Shops beginning with <%= h(@letter) %></h4>
+<% end %>
+
+<p>&nbsp;</p>

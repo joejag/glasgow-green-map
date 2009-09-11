@@ -1,0 +1,20 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+ xml.channel do
+
+   xml.title       "deargreenplace.org :: Places"
+   xml.link        url_for :only_path => false, :controller => 'places'
+   xml.description "deargreenplace registered places"
+
+   @places.each do |place|
+     xml.item do
+       xml.title       place.name
+       xml.link        url_for :only_path => false, :controller => 'places', :action => 'show', :id => place.id
+       xml.description 'hello world'
+       xml.guid        url_for :only_path => false, :controller => 'places', :action => 'show', :id => place.id
+     end
+   end
+
+ end
+end

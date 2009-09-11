@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <%= auto_discovery_link_tag(:rss, {:controller => 'main', :action => 'rss'}) %>
+
+  <%= render :partial => "layouts/stylesheets" %>
+  <%= render :partial => "layouts/google" %>
+
+   <%= javascript_include_tag "statemanager" %>
+
+  <script type="text/javascript">
+    // "Import" the StateManager so we don't have to keep typing
+    // "EXANIMO.managers.StateManager".
+    var StateManager = EXANIMO.managers.StateManager;
+
+
+    // Your old navigation function.
+    function myOldNavigate(id)
+    {
+    // Your existing code for recreating the state.
+      if(id == StateManager.defaultStateID) {
+        document.getElementById('second').reset();
+        map.clearOverlays();
+        map.setCenter(new GLatLng(55.8655,-4.26129),14);
+        $j("div#PlacesListing").html("");
+        $j("#breadcrumbs").html("&nbsp;");
+        return false;
+      }
+
+
+      var splitted = id.split("||");     
+      locatePostcode(splitted[0], splitted[1], splitted[2]);
+
+      // We added this line.
+      StateManager.setState(id, 'Search Results for :: ' + splitted[0]);
+    }
+
+
+    // Call the old navigation function when the user pushes the back
+    // button, forward button, or visits a deep-link.
+    StateManager.onstaterevisit = function(e)
+    {
+    myOldNavigate(e.id);
+    }        
+  </script>
+
+  <%= javascript_include_tag :defaults %>
+
+  <title>Dear Green Place: A map for healthy, cheap, sustainable living in Glasgow</title>
+
+</head>
+
+
+
+
+
+

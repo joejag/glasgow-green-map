@@ -1,0 +1,24 @@
+<%= render :partial => "layouts/map_nav" %>
+
+<div id="map" style="display:none">
+	<div style="width:794px;">
+		<%= @map.div(:width => "794", :height => 400) %>
+	</div>
+</div>
+
+Hi <%= @postcode %>
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+
+function fetchit(point, postcode)
+{
+  //alert("aaa Found " + postcode + " at\nLatitude: " + point.lat() + "\nLongitude: " + point.lng());
+  document.location = "/places/filtered_list/" + point.lat() + "/" + point.lng();
+}
+
+  usePointFromPostcode('<%= @postcode %>', fetchit);
+  
+
+
+//--><!]]></script>

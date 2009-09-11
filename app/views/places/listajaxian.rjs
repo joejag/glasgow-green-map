@@ -1,0 +1,35 @@
+unless @message
+
+  page << "$j('#breadcrumbs').html(\"" + @breadcrumbs + "\");"
+
+  unless(@result.nil?)
+#    @content = escape_javascript(render(:partial => 'result'))
+    @content = escape_javascript(render(:partial => 'result_tags'))
+    page << "$j('div#PlacesListing').html(\"" + @content + "\");"
+  end
+
+  unless(@postcode.nil?)
+    page << @maped.clearOverlays()
+    page << @maped.checkResize()
+
+    @points_list = []
+    @points_list << [@locationlat.to_s, @locationlong.to_s]
+    points = []
+    @result.each {|x| points << GLatLng.new([x.latitude.to_s, x.longitude.to_s])}
+    page << @maped.center_and_zoom_on_points(points)
+
+    @result.each_index do |x|
+      page << @maped.add_overlay(list_result_marker_init(@result[x],x))
+    end
+    page << @maped.add_overlay(location_marker_create_ajax_init(@location))
+    
+  end
+  page << "$j('#search_spinner').hide();"
+  page << "$j('input#updater').show();"
+	page << "$j('div#breadcrumbscontain').removeClass('dull');"
+  page << "placetagstooltiptest();"
+  #page << "myOldNavigate('postcode + " + @postcode.postcode + "');"
+  
+else
+  notice = @message
+end

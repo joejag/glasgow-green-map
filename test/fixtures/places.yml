@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  name: test place 1 
+  longitude: 55.8706
+  latitude: -4.29871
+two:
+  id: 2 
+  name: test place2
+  longitude: 55.8375
+  latitude: -4.26412

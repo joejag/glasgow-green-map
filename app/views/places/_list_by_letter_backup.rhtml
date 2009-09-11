@@ -1,0 +1,14 @@
+<div id="menu" style="visibility:hidden">
+    <%= render :partial => "main/by_letter" %>
+    <div id="sub-categories">
+        <span id="subside-one">&nbsp;</span>
+
+        <div id="one">
+            <ul>
+                <li><%= link_to 'A-Z', :controller => 'main', :action => 'list_by_letter', :letter => 'A' %></li>
+                <li class="current"><a href="#">Charity Shops</a></li>
+                <li><%= link_to 'Volunteer Organisations', :controller => 'places', :action => 'show', :id => 29 %></li>
+            </ul>
+        </div>
+    </div>
+</div>

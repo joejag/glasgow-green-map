@@ -1,0 +1,31 @@
+<div id="filter" class="span-60 last">
+		<h3>Search Options</h3>
+	  <form id="second" action="<%= @context %>places/listajaxian"  method="post" onsubmit="
+		
+		
+		var val = document.getElementById('locate_postcode').value;
+		var milesval = document.getElementById('locate_miles').value;
+		var tagval = document.getElementById('locate_tag').value;
+		
+		myOldNavigate(val + '||' + milesval + '||' + tagval);
+		
+		return false;
+		
+		">
+			<span class="column span-30">
+			<label for="locate_tag">Find some </label>
+			<%= collection_select("locate", "tag" , @tags, "id", "name", {:prompt => "Select Services..."}) %>
+			<label for="locate_miles"> within </label>
+			<%= collection_select("locate", "miles", getSearchWithinAreaOptionsFilter, "value", "label", {:prompt => ""}) %>
+			<label for="locate_postcode"> miles of </label>
+			<%= text_field 'locate', 'postcode', :value => 'street / postcode', :class => 'text'  %>
+		</span>
+		<span class="column span-5 last">
+			<%= submit_tag("Update", :id => "updater") %>
+			<%= image_tag("ajax-loader.gif", :style => "display:none;", :id => "search_spinner", :alt => "spinner") %>
+		</span>
+	</form>
+</div>
+<div id="breadcrumbscontain" class="clear span-60 last">
+<span id="breadcrumbs"> &nbsp;</span>
+</div>

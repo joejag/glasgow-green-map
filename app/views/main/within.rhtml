@@ -1,0 +1,3 @@
+<h1>Listing <%= @places.size %> Charity Shops within <%= pluralize(@miles, 'Mile', 'Miles') %> of <%= h(@postcode) %></h1>
+<%= render :partial => "main/postcode_searcher" %>
+<%= @map.div(:width => "100%", :height => 500) %>

@@ -1,0 +1,53 @@
+<%= error_messages_for 'photo' %>
+
+<% fields_for :photo do |p| %>
+
+	<%= image_tag("/photo_admin/thumbnail/#{@photo.id}", :alt => "Image") %>
+	<p>
+		<%= p.label :binary_data, 'Binary data' %>
+		<%= p.hidden_field(:id) %>
+		<%= p.hidden_field(:content_type) %>
+	</p>
+	<p>
+		<%= p.label :description, 'Description' %>
+		<%= p.text_field :description  %>
+	</p>
+	<p>		
+		<%= p.label :filename, 'Filename' %>
+		<%= p.text_field :filename  %>
+	</p>	
+<% end %>
+
+<% fields_for :photos_places do |pp| %>	
+	<p>
+		<%= pp.label :id, 'This photo shows the following place:' %></br>
+		<select id="photos_places_place_id" name="photos_places[place_id]">
+			<%	if @places.length == 0 or  @places == nil -%>
+		    		<option value="" selected="selected" >Please Selected An Item</option>
+			<% 	end -%>
+		
+			<% 	@items = places_for_select 
+				@items.each_with_index do |item, index|		%>
+					<option value="<%= item[1] %>"	<%	if item[1] == @selected_place.id -%> selected="selected"<% end -%> > 
+						<%= item[0] %> 
+					</option>
+				<%	end	%>
+		</select>
+	</p>
+<% end %>      
+
+<h2>Location currently associated with photo</h2>
+<ul>
+	<li><span class="id_lbl">Unique place ID:</span><%= @selected_place.id  %></li> 
+	<li><span class="name_lbl">Name:</span> <%= @selected_place.name  %></li> 
+	<li><span class="address1_lbl">Address 1:</span> <%= @selected_place.address_1  %></li> 
+	<li><span class="address2_lbl">Address 2:</span> <%= @selected_place.address_2  %></li> 
+	<li><span class="address3_lbl">Address 3:</span> <%= @selected_place.address_3  %></li> 
+	<li><span class="town_lbl">Town:</span> <%= @selected_place.town  %></li> 
+	<li><span class="postcode_lbl">Postcode:</span> <%= @selected_place.postcode  %></li> 
+</ul>
+<h2>Full Image</h2>
+	<p>
+        <%= image_tag("/photo_admin/get/#{@photo.id}", :alt => "Image") %>
+	</p>
+	

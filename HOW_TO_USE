@@ -1,0 +1,70 @@
+PREREQUISITES
+-------------------------------------------------
+
+Install Ruby 1.8.5 or higher
+Install Gem 0.92 or higher (see: http://www.rubyonrails.org/down)
+
+////////////////////////////////////////////////
+/  Rails Install Guide
+/////////////////////////////////////////////////
+
+If you are on a mac it's easiest to use macports to easily install ruby stuff.
+http://www.macports.org/ So install that.
+
+
+> 1. Install Ruby, Gems & Rails
+-------------------------------------------------
+$ port install ruby
+
+Then install Gems:
+http://rubyforge.org/frs/?group_id=126
+
+Then rails:
+$ gem update
+$ gem install rails --include-dependencies
+$ gem install geoRuby
+
+
+
+
+> 2. Setup and config the database
+-------------------------------------------------
+$ cd <project root>
+
+Type in mysql:
+$mysql create database deargreenplace_development;
+
+If you aren't setup as:
+user: root
+pass: root
+
+for mysql you'll have to edit ruby's DB config to reflect the correct user/pass
+you'll find it in: config/database.yml
+
+Then once you have the database setup ruby will setup three convention databases automatically for you with this script:
+$ rake db:migrate
+
+and now we make it use the right schema for fields in the DB:
+$mysql -u root -p deargreenplace_development < db/schema.rb
+
+Ok, green map DBs is ready.
+
+
+
+
+
+
+Running the Ruby Rails Server
+-------------------------------------------------
+When testing out ruby there has to be a server configured to use ruby listening for you trying to get to the page. 
+In this case we're using Ruby's built in server which listens on port 3000 by default. 
+
+$ cd <project root> 
+$ ruby script/server
+
+Ruby is now waiting for you on http://localhost:3000/places
+
+Testing
+-------------------------------------------------
+
+Point your brower at http://localhost:3000/places

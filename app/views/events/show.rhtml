@@ -1,0 +1,11 @@
+<%= render :partial => "layouts/event_nav_no_subs" %>
+<%= flash[:notice] %>
+
+<% for column in Events.content_columns %>
+<p>
+  <b><%= column.human_name %>:</b> <%=h @events.send(column.name) %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', :action => 'edit', :id => @events %> |
+<%= link_to 'Back', :action => 'list' %>

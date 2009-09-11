@@ -1,0 +1,19 @@
+<%= render :partial => "layouts/htmlstart" %>
+
+<body>
+	<div class="container">
+		<div id="loading" style="display: none;">Loading content...</div>
+		<div id="block-one">
+			<%= render :partial => "layouts/nav" %>
+		</div>
+
+		<div id="block-two" class="clear">	
+			<%= render :partial => "layouts/body" %>
+		</div>
+		
+		<div id="block-three" class="clearfix">
+			<%= render :partial => "main/searcher" %>
+			<%= render :partial => "main/about" %>
+		</div>
+
+<%= render :partial => "layouts/htmlfinish" %>

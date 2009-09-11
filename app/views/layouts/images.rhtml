@@ -1,0 +1,8 @@
+<%= render :partial => "layouts/htmlstart" %>
+<body>
+	<div class="container">
+		<p style="color: green"><%= flash[:notice] %></p>
+		<%= yield  %>
+	</div>
+</body>
+<%= render :partial => "layouts/htmlfinish" %>

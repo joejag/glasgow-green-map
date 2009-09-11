@@ -1,0 +1,24 @@
+unless @message
+
+  #page['breadcrumbs'].innerHTML = @breadcrumbs
+  
+  page << "document.getElementById('breadcrumbs').innerHTML = \"" + @breadcrumbs + "\";"
+
+  unless(@postcode.nil?)
+    page << @maped.clearOverlays()
+    page << @maped.checkResize()
+    page << @maped.setZoom(@zoom_level.to_i)
+    #page << @maped.panTo(GLatLng.new([@postcode.latitude,  @postcode.longitude]))
+    page << @maped.setCenter(GLatLng.new([@postcode.latitude,  @postcode.longitude]))
+
+    page << "searchCircleReset()"
+    page << "search_circle = new SearchCircle('Within " + @miles + ' Mile(s) of ' + @postcode.postcode + "', new GLatLng(" + @postcode.latitude  + "," + @postcode.longitude + "), " + @miles + ");"
+
+    @result.each do |placement|
+      page << @maped.add_overlay(marker_init(placement))
+    end
+  end
+
+else
+  notice = @message
+end

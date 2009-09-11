@@ -1,0 +1,48 @@
+<%= render :partial => "layouts/map_nav_no_subs" %>
+	
+	<h2>Add a place to the Map</h2>
+		<ul id="toolbar">
+			<li id="who-tab" class="active"><a href="#who-pane" onclick="ScrollSection('who-pane', 'scroller', 'who-pane'); return false" title="Sites">1. Who</a></li>
+			<li id="what-tab" class="inactive"><a href="#what-pane" onclick="ScrollSection('what-pane', 'scroller', 'who-pane'); return false" title="Files">2. What</a></li>
+			<li id="where-tab" class="inactive"><a href="#where-pane" onclick="ScrollSection('where-pane', 'scroller', 'who-pane'); return false" title="Editor">3. Where</a></li>
+			<li id="contact-tab" class="inactive"><a href="#contact-pane" onclick="ScrollSection('contact-pane', 'scroller', 'who-pane'); return false" title="Preview">4. Done!</a></li>
+		</ul>
+		
+		<div id="container">	
+			<div class="dialog">
+				<div id="frame"><!-- Contains the forward/back buttons, hides the scrollbar -->				
+			 		<div class="content">
+			  			<div class="t"></div>
+			
+							
+						<!-- Left Scroll Arrow-->
+						<div class="button" id="left">
+							<a href="javascript:ScrollArrow('left','toolbar','scroller','who-pane');">
+								<img src="../img/button-left.png" alt="left scroll arrow" onmouseover="this.src = '../img/button-left-rollover.png'" onmouseout="this.src = '../img/button-left.png'" /></a>
+						</div>
+									
+						<div id="scroller"><!-- Contains the horizontal scrollbar -->
+							<div id="content"><!-- Very wide to contain all the sections side-by-side -->
+			  		  			
+								<% form_for(:place, @place, :url=>{:action=>'create'}, :html=>{:multipart=>true}) do |form| %>			  		  
+									<%= render :partial => 'form' %>
+									<%= submit_tag "Create" %>
+								<% end %>		
+											
+							</div><!-- end content -->
+						</div><!-- end scroller -->
+				
+						<!-- Right Scroll Arrow-->
+						<div class="button" id="right">
+							<a href="javascript:ScrollArrow('right','toolbar','scroller','who-pane');"><img src="../img/button-right.png" alt="right scroll arrow" onmouseover="this.src = '../img/button-right-rollover.png'" onmouseout="this.src = '../img/button-right.png'" /></a>
+						</div>
+
+					</div><!-- end content -->
+					<div class="b"><div></div></div>	
+				</div><!-- end frame-->
+			</div><!-- end-dialog -->
+		</div><!-- end-container -->
+		
+		<div class="notification">
+			<p>You don't have to give us all your details (If you don't want to), the most important bits are marked with a red Exclamation mark!.</p>
+		</div>

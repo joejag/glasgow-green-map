@@ -1,0 +1,12 @@
+<div id="menu">
+	<div id="top">
+		<h1>Dear Green Place</h1><%= link_to image_tag("logo.png", :alt => "Logo", :class => 'logo'), :controller => 'main', :action => 'index' %>
+	</div>
+	<div id="tabs">
+		<ul>
+			<li><%= link_to 'Map', :controller => 'main', :action => 'index' %><span></span></li>
+			<li><a href="http://www.deargreenplace.org/blog">Blog</a><span></span></li>
+			<li class="current"><%= link_to 'Events', :controller => 'events', :action => 'list' %><span></span></li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+	<div id="top" class="span-50">
+		<h6 class="prepend-1" id="tagline">Recycling &amp; Reuse in Glasgow</h6>
+
+	</div>
+
+<div class="header span-50">
+	<img id="greenmaplogo" src="/images/greenmaplogo.gif" alt="Green Map" />
+	<form id="top-search-form" action="<%= @context %>main/ajaxian"  method="post" onsubmit="return locatePostcode($j('#top-nav-search').val(), 1, '');">
+		<fieldset id="site-search" class="append-1" style="float:right;">
+		<label>eg. street name, postcode</label>
+		<div class="search-box" style="text-align: right;"><input id="top-nav-search" tabindex="1" type="text" value="Search" title="Search" style="width: 8em;" class="prepare" />
+			<input value="Go!" tabindex="2" type="submit" style="text-indent: -9999px; height: 36px; width: 81px; background: url(/images/bg-submit.png) no-repeat right center;border:0;" /></div>
+		</fieldset>
+	</form>
+
+	<ul id="nav-one" class="clear">
+		<li id="current"><a href="/#"><span>Map</span></a></li>
+		<li><a href="http://deargreenplace.org/blog/">News</a></li>
+		<li class="second"><a href="#TB_inline?height=500&amp;width=680&amp;inlineId=aboutInfo" class="thickbox">About</a></li>
+	</ul>
+
+</div>
+
+
+
+

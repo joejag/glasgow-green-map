@@ -1,0 +1,171 @@
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+	$j(document).ready(function() {
+			prepareTextboxes();
+           	StateManager.initialize();
+		}
+	 );
+
+	$j("input#updater").click(function() {  
+				$j("#search_spinner").show();
+				$j("input#updater").hide();
+				$j("#breadcrumbs").html("Please wait - loading...");
+				$j('div#breadcrumbscontain').addClass('dull');
+	}
+	);
+
+	var placesviewstyle = "List"
+	function changetolistview() {
+		if (placesviewstyle!="List"){
+			placesviewstyle = "List"
+			$j("a#BoxView").css({fontWeight:"normal"});
+			$j("a#ListView").css({fontWeight:"bold"});
+
+			$j("div.Header").show();
+
+			$j("div.ResultsContainerBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultsContainerBox");
+			$j("div.beingreplaced").addClass("ResultsContainerList");
+			$j("div.ResultsContainerList").removeClass("beingreplaced");
+
+			$j("div.ResultItemContainerBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemContainerBox");
+			$j("div.beingreplaced").addClass("ResultItemContainerList");
+			$j("div.ResultItemContainerList").removeClass("beingreplaced");
+
+			$j("div.ResultItemNumberBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemNumberBox");
+			$j("div.beingreplaced").addClass("ResultItemNumberList");
+			$j("div.ResultItemNumberList").removeClass("beingreplaced");
+
+			$j("div.ResultItemNameBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemNameBox");
+			$j("div.beingreplaced").addClass("ResultItemNameList");
+			$j("div.ResultItemNameList").removeClass("beingreplaced");
+
+			$j("div.ResultItemAddressBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemAddressBox");
+			$j("div.beingreplaced").addClass("ResultItemAddressList");
+			$j("div.ResultItemAddressList").removeClass("beingreplaced");
+
+			$j("div.ResultItemPostcodeBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemPostcodeBox");
+			$j("div.beingreplaced").addClass("ResultItemPostcodeList");
+			$j("div.ResultItemPostcodeList").removeClass("beingreplaced");
+
+			$j("div.ResultItemTagsBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemTagsBox");
+			$j("div.beingreplaced").addClass("ResultItemTagsList");
+			$j("div.ResultItemTagsList").removeClass("beingreplaced");
+
+			$j("div.ResultItemDistanceBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemDistanceBox");
+			$j("div.beingreplaced").addClass("ResultItemDistanceList");
+			$j("div.ResultItemDistanceList").removeClass("beingreplaced");
+
+			$j("div.ResultItemNameMiddleBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemNameMiddleBox");
+			$j("div.beingreplaced").addClass("ResultItemNameMiddleList");
+			$j("div.ResultItemNameMiddleList").removeClass("beingreplaced");
+
+			$j("div.ResultItemNameInnerBox").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemNameInnerBox");
+			$j("div.beingreplaced").addClass("ResultItemNameInnerList");
+			$j("div.ResultItemNameInnerList").removeClass("beingreplaced");
+
+
+		}
+		
+	}
+
+	function changetoboxview() {
+		if (placesviewstyle!="Box"){
+			placesviewstyle = "Box"
+			$j("a#ListView").css({fontWeight:"normal"});
+			$j("a#BoxView").css({fontWeight:"bold"});
+			
+			$j("div.Header").hide();
+
+			$j("div.ResultsContainerList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultsContainerList");
+			$j("div.beingreplaced").addClass("ResultsContainerBox");
+			$j("div.ResultsContainerBox").removeClass("beingreplaced");
+
+
+			$j("div.ResultItemContainerList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemContainerList");
+			$j("div.beingreplaced").addClass("ResultItemContainerBox");
+			$j("div.ResultItemContainerBox").removeClass("beingreplaced");
+
+			$j("div.ResultItemNumberList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemNumberList");
+			$j("div.beingreplaced").addClass("ResultItemNumberBox");
+			$j("div.ResultItemNumberBox").removeClass("beingreplaced");
+
+			$j("div.ResultItemNameList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemNameList");
+			$j("div.beingreplaced").addClass("ResultItemNameBox");
+			$j("div.ResultItemNameBox").removeClass("beingreplaced");
+
+			$j("div.ResultItemAddressList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemAddressList");
+			$j("div.beingreplaced").addClass("ResultItemAddressBox");
+			$j("div.ResultItemAddressBox").removeClass("beingreplaced");
+
+			$j("div.ResultItemPostcodeList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemPostcodeList");
+			$j("div.beingreplaced").addClass("ResultItemPostcodeBox");
+			$j("div.ResultItemPostcodeBox").removeClass("beingreplaced");
+
+			$j("div.ResultItemTagsList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemTagsList");
+			$j("div.beingreplaced").addClass("ResultItemTagsBox");
+			$j("div.ResultItemTagsBox").removeClass("beingreplaced");
+
+			$j("div.ResultItemDistanceList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemDistanceList");
+			$j("div.beingreplaced").addClass("ResultItemDistanceBox");
+			$j("div.ResultItemDistanceBox").removeClass("beingreplaced");
+
+			$j("div.ResultItemNameMiddleList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemNameMiddleList");
+			$j("div.beingreplaced").addClass("ResultItemNameMiddleBox");
+			$j("div.ResultItemNameMiddleBox").removeClass("beingreplaced");
+
+			$j("div.ResultItemNameInnerList").addClass("beingreplaced");
+			$j("div.beingreplaced").removeClass("ResultItemNameInnerList");
+			$j("div.beingreplaced").addClass("ResultItemNameInnerBox");
+			$j("div.ResultItemNameInnerBox").removeClass("beingreplaced");
+			
+		}
+	}
+
+	
+	
+	function locatePostcode(val,milesval,tagval){
+		$j(":input#locate_tag").val(tagval);
+		$j(":input#locate_miles").val(milesval);
+		$j(":input#locate_postcode").val(val);
+		
+		if(val.length != 0 && val != "Search" && val != 'street / postcode') {
+			// If we are here, the user has not left the search box blank
+			if(milesval != "") {
+				//If we are here, we're not searching from the overview map and the user has specified a radius
+				  newfadeAndShowPlaces('<%= @context %>',val, milesval, tagval);
+			} else {
+				//If we are here, we're searching from the overview map OR the user has not specified a radius
+			  newfadeAndShowPlaces('<%= @context %>', val, '1', tagval);
+			}
+	  }
+
+	   return false;
+	}
+//--><!]]></script>
+	<script src="/javascripts/prototype.js" type="text/javascript"></script>
+	<script type="text/javascript" src="/javascripts/jquery/jquery-1.2.3.js"></script>
+ 	<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+
+
+	</body>
+</html>
+

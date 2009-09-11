@@ -1,0 +1,13 @@
+<%= render :partial => "layouts/htmlstart" %>
+<body id="add-place">
+	<div class="container">
+		<div id="block-1">
+			<%= yield  %>
+		</div>
+		<p><span id="grass"></span></p>
+		<div id="block-2">
+			<%= render :partial => "layouts/main_footer" %>
+		</div>
+	</div>
+</body>
+<%= render :partial => "layouts/htmlfinish" %>

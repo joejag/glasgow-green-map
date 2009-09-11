@@ -1,0 +1,46 @@
+<%= render :partial => "layouts/events_nav" %>
+
+<h1>Listing events</h1>
+
+<table id="events" cellspacing="0" summary="List of all coming eco-events in Glasgow">
+	<caption>Glasgow Eco-friendly Events</caption>
+  	<thead>
+		<tr>
+  			
+  			<% for column in Events.overview_columns %>
+    			<th scope="col"><%= column.name %></th>
+  			<% end %>
+
+			<th id="actions" colspan="3">Actions</th>
+		</tr>
+	<thead>
+	<tbody>
+    	<% for events in @events %>
+      		
+      		<tr> 		
+      			<% for column in Events.overview_columns %>
+    	            <% if column.name == "name" %>
+                        <th scope="row" class="title"><%= link_to events.send(column.name), :action => 'show', :id => events %></th>
+                    <% elsif  column.name == "start_date" %>
+                        <td><%= events.send(column.name).strftime("%a %d %B") %></td>
+                    <% elsif  column.name != "name" %>
+                        <td><%=h events.send(column.name) %></td>
+                    <% end %>
+    			                        				    			
+      			<% end %>
+        		
+    			<td class="action"><%= link_to 'Show', :action => 'show', :id => events %></td>
+        		<td class="action"><%= link_to 'Edit', :action => 'edit', :id => events %></td>
+        		<td class="action"><%= link_to 'Destroy', { :action => 'destroy', :id => events }, :confirm => 'Are you sure?', :method => :post %></td>
+      		</tr>
+	   <% end %>
+	</tbody>
+</table>
+
+<%= link_to 'Previous page', { :page => @events_pages.current.previous } if @events_pages.current.previous %>
+<%= link_to 'Next page', { :page => @events_pages.current.next } if @events_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New events', :action => 'new' %>
+

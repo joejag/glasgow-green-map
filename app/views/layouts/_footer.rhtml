@@ -1,0 +1,19 @@
+<div id="menu">
+<%= link_to 'Homepage', :controller => 'main', :action => 'index' %> |
+<%= link_to 'New Place', :controller => 'places', :action => 'new' %> |
+<%= link_to 'Show On Small Map', :controller => 'places', :action => 'list' %> |
+<%= link_to 'Show Random Places', :controller => 'places', :action => 'random' %> |
+<%= link_to 'Show On Large Map', :controller => 'main', :action => 'list' %> |
+<%= link_to 'Show All Categories', :controller => 'categories', :action => 'list' %> |
+<%= link_to 'Show All Articles', :controller => 'articles', :action => 'list' %>
+<%= link_to image_tag("rss.gif", :border=>0, :height=>22, :width=>22), :controller => 'main', :action => 'rss' %>
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-2364802-1";
+urchinTracker();
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+   <%= GMap.header :with_vml => false %>
+
+   <%= javascript_include_tag "ym4r-gm", "gmap", "prototype", "searchCircle" %>
+   <%= @map.to_html %>
+
+   <%= javascript_include_tag "jquery/jquery-1.2.3.js" %>
+   <%= javascript_include_tag "jquery/thickbox-compressed.js" %>
+
+   <%= javascript_include_tag "jquery/jquery_plugin/jquery.maphilight.min.js" %>
+   <%= javascript_include_tag "lib" %>
+   <script type="text/javascript">
+		var $j = jQuery.noConflict();
+   </script>
+
+   <%= javascript_include_tag "tooltip.js" %>

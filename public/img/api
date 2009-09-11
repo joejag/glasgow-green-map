@@ -1,0 +1,12 @@
+var UDS_ServiceBase = "http://www.google.com/uds";
+var UDS_CurrentLocale = "en";
+var UDS_ShortDatePattern = "MDY";
+var UDS_ApiKey = "ABQIAAAAlyeJljQH98VMTkAORPPxhxTJQa0g3IQ9GZqIMmInSLzwtGDKaBRNiPrnoWGfGagbQYkipZj9U_e_Eg";
+var UDS_Version = "1.0";
+var UDS_OriginalAppPath = "http://www.mywiredempire.com/greenmap/";
+var UDS_JSHash = "81f401ae6c9e33acdac25f3668dba3eb";
+var UDS_KeyVerified = false;
+var UDS_LoadFailure = true;
+function UDS_loadScript(url) { document.write('<script src="' + url + '" type="text/javascript"></script>');}
+UDS_loadScript("http://www.google.co.uk/uds/js/locale/en/uistrings.js");
+UDS_loadScript("http://www.google.co.uk/uds/js/uds_compiled.js");

@@ -1,0 +1,92 @@
+	<% if(@result.nil?) %>
+		
+	<% else %>
+	<div id="ResultsFormat">
+		<strong>View Options</strong>&nbsp;&nbsp;&nbsp;
+		<a id="ListView" href="" onClick="changetolistview(); return false;" style="font-weight:bold;">List</a>
+			<a id="BoxView"  href="" onClick="changetoboxview();  return false;">Boxes</a>
+	</div>		
+		<% result_number = 1 -%>
+		<div id="ResultsContainer" class="ResultsContainerList">
+			<div id="ResultHeader" class="ResultItemContainerList Header">
+				<div id="ResultItemNumberHeader" class="ResultItemNumberList">
+					&nbsp;
+				</div>
+				<div id="ResultItemNameHeader" class="ResultItemNameList">
+					Name
+				</div>
+				<div id="ResultItemAddressHeader" class="ResultItemAddressList">
+				  Address
+				</div>
+				<div id="ResultItemPostcodeHeader" class="ResultItemPostcodeList">
+					Postcode
+				</div>
+				<div id="ResultItemTagsHeader" class="ResultItemTagsList">
+					Tags
+				</div>
+				<div id="ResultItemDistanceHeader" class="ResultItemDistanceList">
+					Distance
+				</div>
+			</div>
+			
+			<% for place in @result -%>
+				<div id="ResultItemContainer<%= place.id -%>" class="ResultItemContainerList">
+					<div id="ResultItemNumber" class="ResultItemNumberList">
+						<%= result_number -%><% result_number += 1 -%>
+					</div>
+					<div id="ResultItemName" class="ResultItemNameList">
+						<div id="ResultItemMiddleName" class="ResultItemNameMiddleList">
+							<div id="ResultItemInnerName" class="ResultItemNameInnerList">
+								<%= link_to place.name, :action => 'show', :id => place -%>
+							</div>
+						</div>
+					</div>
+					<div id="ResultItemAddress" class="ResultItemAddressList">
+					  <%= place.address_1 -%>
+					</div>
+					<div id="ResultItemPostcode" class="ResultItemPostcodeList">
+						<%= place.postcode -%>
+					</div>
+					<div id="ResultItemTags<%= place.id -%>" class="tooltiphoverarea ResultItemTagsList">
+							<% place.tags.each do |place_tag| -%>
+								<div id="ResultItemTag" style="background: url('/images/categoryicons/<%= place_tag.id.to_s -%>.png') no-repeat center center;">
+									<span class="inner">
+										<%= place_tag.name -%>
+									</span>
+								</div>
+							<% end %>
+					</div>
+					<div id="ResultItemDistance" class="ResultItemDistanceList">
+						<%= place.distance %> miles
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<p>
+
+			<% params = "locate[postcode]=" + @postcode.postcode.to_s + "&locate[miles]=" + @miles + "&zoom_level=" + "&locate[tag]=" + @tag + "&"%>
+			<%=	pagination_links_each(@result_pages, {:window_size => 1}) do |n| 
+				"<a href=''  onclick='search_for_point_places_paginated(\"#{@postcode.postcode}\", \"#{@context}\", \"#{params}\", \"#{n}\", \"#{@postcode.longitude}\", \"#{@postcode.latitude}\"); return false;'>#{n}</a>"
+			end
+	      
+			-%>
+		</p>
+	<% end %>
+
+<div id="PlaceTagTooltips" style="display:none;">
+	<% for place in @result -%>
+	<div id="TooltipResultItemTags<%= place.id -%>">
+		<strong><%= place.name -%></strong> supplies:
+		<ul style="margin:0; padding:0;">
+			<% place.tags.each do |place_tag| -%>
+				<li style="list-style-type:none; margin-left:0px; padding-left:0px;">
+					<span style="background: url('/images/categoryicons/<%= place_tag.id.to_s -%>.png') no-repeat left center; padding-left:20px;">
+						<%= place_tag.name -%>
+					</span>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+</div>
+

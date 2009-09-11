@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+two:
+  id: 2
+glasgow_postcode_withspaces:
+  id: 3
+  postcode: g40 1hw  
+  longitude: 78687687
+  latitude: 6765
+clean_glasgow_postcode:
+  id: 4
+  postcode: g401hw
+  longitude: 86876
+  latitude: 565567
+glasgow_postcode2_withspaces:
+  id: 5
+  postcode: g41 3ay  
+  longitude: 78687687
+  latitude: 6765
+clean_glasgow2_postcode:
+  id: 6
+  postcode: g413ay
+  longitude: 86876
+  latitude: 565567

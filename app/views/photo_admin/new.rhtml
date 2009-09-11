@@ -1,0 +1,21 @@
+<% form_for(:photo, @photo, :url=>{:action=>'create'}, :html=>{:multipart=>true}) do |form| %>
+
+	<h1>Add new photo to place</h1>
+	<% fields_for :photo do |p| %> 
+		<%= p.hidden_field(:id) %>
+		<%= p.hidden_field(:content_type) %>
+		<%= p.hidden_field(:binary_data) %>
+		<%= p.label :image_file, 'Location of image' %>
+	    <%= p.file_field :image_file %><br />
+		<%= p.label :description %>
+	    <%= p.text_field :description, :label => 'Image Description' %><br /> 
+	<% end %>      
+	<% fields_for :photos_places do |pp| %>	
+		<%= pp.label :place_id, 'Where on the map is this a photo of? :' %>
+		<%= pp.select(:place_id, places_for_select, :prompt => 'organisation / address') %>
+	<% end %>
+
+    <%= submit_tag "Create" %>	
+<% end %>  
+
+<%= link_to 'Back', :action => 'list' %>

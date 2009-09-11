@@ -1,0 +1,89 @@
+<%= render :partial => "layouts/map_nav" %>
+<div id="content">
+    <div id="left" class="PlaceShowLeft column span-19 push-1">
+                <h2><%= h @place.name %></h2>
+                <div class="PlaceDetailsLink column span-18">
+                    <%= create_http_link @place %>
+                </div>
+                <div class="PlaceDetailsAddress column span-18">
+                    <%= h convert_address(@place) %><br>
+                    <%= h @place.town %><br>
+                    <%= h @place.postcode %>
+                </div>
+                <div class="PlaceDetailsTelephone column span-18">
+                    <b>Tel:</b> <%= h @place.telephone %>
+                </div>
+
+                <div class="PlaceDetailsCategory column span-18">
+                    <div class="column span-5">
+                        <b>Category</b>
+                    </div>
+                    <div class="column span-13 last">
+                        <%= h @place.category.name %>
+                    </div>
+                </div>
+
+                <div class="PlaceDetailsSupplies column span-18">
+                    <div class="column span-5">
+                        <b>Supplies</b>
+                    </div>
+                    <div class="column span-13 last">
+                        <% for tag in @place.tags %>
+                            <div class="Tag<%= tag.id -%>WithIcon column span-13 last">
+                                <%=tag.name%>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+
+                <% unless @place.about.empty? %>
+                    <div class="OrgAbout">
+                        <b>Description:</b><%= h @place.about %>Stop
+                    </div>
+                <% end %>
+
+                <div class="PlaceDetailsOpeningHours column span-18">
+                    <div class="column span-5">
+                        <b>Opening Hours</b>
+                    </div>
+                    <div class="column span-13 last">
+                        <%= h @place.opening_times %>
+                    </div>
+                </div>
+                <div class="PlaceDetailsNavigation column span-18">
+                    <a href="#" onClick="history.go(-1);return false;">Back</a> |
+                    <%= link_to 'Edit', :action => 'edit', :id => @place %> |
+                    <%= link_to 'Delete', { :action => 'destroy', :id => @place }, :confirm => 'Are you sure?', :method => :post %>
+                </div>
+            </div>
+        <div id="right" class="PlaceShowRight column span-30 last">
+        <div id="map-search">
+            <!-- ><span id="left">&nbsp;</span>
+                <span id="right">&nbsp;</span>
+                <span id="pull-down">Categories</span>
+                <form>
+                  <input type="text" id="search-map" value="">
+                  <input id="search" type="button" value="Go"></input>
+                </form> -->
+        </div>
+        <span id="breadcrumbs"></span>
+
+        <div id="map">
+            <div style="width:474px;">
+                <%= @map.div(:width => "474", :height => 454) %>
+            </div>
+        </div>
+
+
+        <div id="photos">
+            <p>
+                <% for photo in @place.photos %>
+                    <%= image_tag("/photo_admin/thumbnail/#{photo.id}", :alt => "Image") %>,
+                <% end %>
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+

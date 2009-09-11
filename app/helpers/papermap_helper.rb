@@ -1,0 +1,2 @@
+module PapermapHelper
+end

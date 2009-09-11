@@ -1,0 +1,14 @@
+<%= link_to 'Back', :action => 'list' %> |
+<%= link_to 'Edit', :action => 'edit', :id => @photo %>
+
+<% for column in Photo.content_columns %>
+    <p>
+        <b><%= column.human_name %>:</b>
+        <% if column.name == "binary_data" %>
+            <%= image_tag("/photo_admin/get/#{@photo.id}", :alt => "Image") %></a>
+        <% elsif column.name == "thumbnail_data" %>
+        <% else %>
+            <%= h @photo.send(column.name) %>
+        <% end %>
+    </p>
+<% end %>

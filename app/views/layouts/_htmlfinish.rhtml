@@ -1,0 +1,40 @@
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+	$j(document).ready(function() {
+			$j(".jq_maphilight").maphilight();
+			tooltip();
+			prepareTextboxes();
+     		StateManager.initialize();
+			$j("#block-two div.loading").hide();			
+    		$j("#block-two div.areaChooser").show();
+		}
+	 );
+
+ 	function locatePostcode(val,milesval,tagval){
+ 		$j(":input#locate_tag").val(tagval);
+ 		$j(":input#locate_miles").val(milesval);
+ 		$j(":input#locate_postcode").val(val);
+
+ 		if(val.length != 0 && val != "Search" && val != 'street / postcode') {
+ 			// If we are here, the user has not left the search box blank
+ 			if(milesval != "") {
+ 				//If we are here, we're not searching from the overview map and the user has specified a radius
+ 				  newfadeAndShow('<%= @context %>',val, milesval, tagval);
+ 			} else {
+ 				//If we are here, we're searching from the overview map OR the user has not specified a radius
+ 			  newfadeAndShow('<%= @context %>', val, '1', tagval);
+ 			}
+ 	  }
+
+ 	   return false;
+ 	}
+//--><!]]></script>
+	<script src="/javascripts/prototype.js" type="text/javascript"></script>
+
+		<script type="text/javascript" src="/javascripts/jquery/jquery-1.2.3.js"></script>
+  <!-- <script type="text/javascript" src="/javascripts/jquery/jquery.dropshadow.js"></script> -->
+
+	 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+	</body>
+</html>
+

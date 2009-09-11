@@ -1,0 +1,12 @@
+<%= render :partial => "layouts/nav_no_subs" %>
+<%= flash[:notice] %>
+
+<h1>Editing events</h1>
+
+<% form_tag :action => 'update', :id => @events do %>
+  <%= render :partial => 'form' %>
+  <%= submit_tag 'Edit' %>
+<% end %>
+
+<%= link_to 'Show', :action => 'show', :id => @events %> |
+<%= link_to 'Back', :action => 'list' %>

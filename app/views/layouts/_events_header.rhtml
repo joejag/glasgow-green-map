@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Glasgow Green Map - Cheap and Healthy living in Glasgow</title>	
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<%= render :partial => "layouts/stylesheets" %>
+  <style type="text/css" media="screen">
+		#menu
+		{
+			clear: both;
+			padding: 1em;
+			text-align: center;
+			border-top: 1px solid #333;
+		}
+		#map_div_main
+		{
+		    float: left;
+		    margin-right: 10px;
+		    margin-bottom: 10px;
+		    border-style: solid
+		}
+		body 
+        {
+	        background-image: url('<%= image_path("BG_main.jpg") %>');
+	        background-repeat: repeat-x;	
+        }
+</style>	
+<%= auto_discovery_link_tag(:rss, {:controller => 'main', :action => 'rss'}) %>

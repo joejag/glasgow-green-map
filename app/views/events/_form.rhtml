@@ -1,0 +1,94 @@
+<!--[form:events]-->
+
+<!-- Who Pane -->
+<div class="section" id="who-pane">
+<%= error_messages_for 'events' %>
+	<h2>1. Who are you adding?</h2>
+		<ol>
+			<li>													
+				<p><label for="events_name">Name</label><br/>
+				<%= text_field 'events', 'name'  %></p>
+			<li>
+				<p><label for="events_all_day_event">All day event</label><br/>
+				<select id="events_all_day_event" name="events[all_day_event]"><option value="false">False</option><option value="true">True</option></select></p>
+			</li>
+			<li>
+				<p><label for="events_recurring_type">Recurring type</label><br/>
+				<%= text_field 'events', 'recurring_type'  %></p>
+			</li>
+		</ol>
+</div>
+
+
+
+<!-- What Pane -->
+	
+<div class="section" id="what-pane">
+<%= error_messages_for 'events' %>				
+	<h2>2. Tell us about their eco-freindliness</h2>							
+	<ol>
+		<li>
+			<p><label for="events_about">About</label><br/>
+			<%= text_area 'events', 'about'  %></p>
+		</li>
+		<li>
+			<p><label for="events_start_date">Start date</label><br/>
+			<%= datetime_select 'events', 'start_date'  %></p>
+		</li>
+		<li>
+			<p><label for="events_finish_date">Finish date</label><br/>
+			<%= datetime_select 'events', 'finish_date'  %></p>		
+		</li>
+	</ol>
+</div>
+
+
+
+<!-- Where Pane -->
+<div class="section" id="where-pane">
+<%= error_messages_for 'events' %>	
+	<h2>3. Where can we find them?</h2>
+	<ol>
+		<li>
+			<p><label for="events_address">Address</label><br/>
+			<%= text_field 'events', 'address'  %></p>
+		</li>
+		<li>
+			<p><label for="events_postcode">Postcode</label><br/>
+			<%= text_field 'events', 'postcode'  %></p>
+		</li>
+	</ol>
+</div>
+
+
+
+<!-- Contact Pane -->
+
+<div class="section" id="contact-pane">
+<%= error_messages_for 'events' %>
+	<h2>4. Can we have even more info?!</h2>
+	<ol>
+		<li>
+			<p><label for="events_contact_name">Contact name</label><br/>
+			<%= text_field 'events', 'contact_name'  %></p>
+		</li>
+		<li>
+			<p><label for="events_contact_no">Contact no</label><br/>
+			<%= text_field 'events', 'contact_no'  %></p>
+		</li>
+		<li>
+			<p><label for="events_contact_url">Contact url</label><br/>
+			<%= text_field 'events', 'contact_url'  %></p>
+		</li>
+		<li>
+		  <%= submit_tag "Create" %>
+		</li>
+	</ol>
+</div>
+
+
+
+
+
+<!--[eoform:events]-->
+

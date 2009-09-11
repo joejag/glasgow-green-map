@@ -1,0 +1,119 @@
+<!--[form:place]-->
+	<% fields_for :place do |place| %> 
+						<!-- Who Pane -->
+							
+						<div class="section" id="who-pane">
+						<%= error_messages_for 'place' %>							
+							<h2>1. Who are you adding?</h2>
+								<ol>
+									<%= place.hidden_field :id  %><br />
+									<li>													
+										<label for="place_name">Name:</label>
+                                        <%= place.text_field :name  %><br />
+									</li>
+									<li>
+										<fieldset>
+										<legend>Category</legend>
+										<ul>
+											<li>
+											    <%= place.select(:category_id, Category.find(:all).collect{ |c| [c.name, c.id]} ) %>
+											</li>
+											<li>
+                                                <% for tag in @tags %>
+												    <br/>
+                                                    <input type="checkbox" id="<%=tag.id %>" name="tag_ids[]" value="<%=tag.id %>"<% if @place.tags.include? tag %> checked="checked"<% end %>><%=tag.name %></input>
+                                                <% end %>
+                                            </li>
+										</ul>
+										</fieldset>
+									</li>
+								</ol>
+						</div>
+
+
+						<!-- What Pane -->
+							
+						<div class="section" id="what-pane">
+						<%= error_messages_for 'place' %>				
+							<h2>2. Tell us about their eco-freindliness</h2>							
+							<ol>
+								<li>
+									<%= place.label :about, 'About' %>
+									<%= place.text_area :about  %>
+								</li>
+								<li>
+									<%= place.label :opening_times, 'Opening Hours:' %>
+									<%= place.text_field :opening_times  %>
+								</li>
+							</ol>
+						</div>
+
+						<!-- Where Pane -->
+
+						<div class="section" id="where-pane">
+						<%= error_messages_for 'place' %>	
+							<h2>3. Where can we find them?</h2>
+							<ol>
+								<li>
+									<%= place.label :url, 'Website:' %>
+									<%= place.text_field :url  %>
+								</li>
+								<li>
+									<%= place.label :address_1, 'Address:' %>
+								    <%= place.text_field :address_1  %>
+						            <%= place.text_field :address_2  %>
+									<%= place.text_field :address_3  %>
+				                    <input type="submit" value="Move marker to Address" onclick="javascript:usePointFromPostcode(document.getElementById('place_address_1').value + ' ' + document.getElementById('place_address_2').value, moveAddMarkerToPoint); return false;" />
+								</li>
+								<li>
+									<%= place.label :town, 'Town/City:' %>
+									<%= place.text_field :town  %>
+								</li>
+								<li>
+									<%= place.label :postcode, 'Postcode:' %>
+									<%= place.text_field :postcode  %>
+									<input type="submit" value="Move marker to Postcode" onclick="javascript:usePointFromPostcode(document.getElementById('place_postcode').value, moveAddMarkerToPoint); return false;" />
+                                    <%= place.hidden_field :longitude  %>
+                                    <%= place.hidden_field :latitude  %>    			                  
+     			                  <%= @map.div(:width => 500, :height => 200) %>                               								
+								</li>	
+							</ol>
+						</div>
+						
+						
+						<!-- Contact Pane -->
+						
+						<div class="section" id="contact-pane">
+						<%= error_messages_for 'place' %>	
+							<h2>4. Can we have even more info?!</h2>
+							<ol>
+								<li>
+									<%= place.label :telephone, 'Telephone No:' %>
+									<%= place.text_field :telephone  %>
+								</li>
+								<li>
+									<%= place.label :email, 'Email:' %>
+									<%= place.text_field :email  %>
+								</li>
+								<li>
+									<%= place.label :contact, 'Contact Name:' %>
+									<%= place.text_field :contact  %>
+								</li>
+							</ol>
+						</div>
+			<% end %>
+<!--[eoform:place]-->
+	<h2>This places current Photos</h2>
+	    <% for photo in @place.photos %>
+	        <%= image_tag("/photo_admin/thumbnail/#{photo.id}", :alt => "Image") %>,
+	    <% end %>
+
+
+	<h2>Add new photo to place</h2>
+		<% fields_for :photo do |p| %>  
+			<%= p.label :image_file, 'Location of image' %>
+	    	<%= p.file_field :image_file %><br />
+			<%= p.label :description %>
+		    <%= p.text_field :description, :label => 'Image Description' %><br /> 
+		<% end %>  			
+

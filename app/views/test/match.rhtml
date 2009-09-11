@@ -1,0 +1,30 @@
+<SCRIPT LANGUAGE="JavaScript"><!--
+function isGlasgowPostcode() {
+  var re = new RegExp('[G|g][0-9]');
+  if (document.demoMatch.subject.value.match(re)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function isGlasgowPostcode(searchText) {
+  return searchText.match(new RegExp('[G|g][0-9]'));
+}
+
+function appendGlasgowIfNotPostcode(searchText) {
+	if(isGlasgowPostcode(searchText)) {
+		return searchText;
+	}
+	return searchText + ', Glasgow';
+}
+// -->
+</SCRIPT>
+
+<FORM ID="demoMatch" NAME="demoMatch" METHOD=POST ACTION="javascript:void(0)">
+<P>Subject string: <INPUT TYPE=TEXT NAME="subject" VALUE="G21" SIZE=50></P>
+<P><INPUT TYPE=SUBMIT VALUE="Test Match" ONCLICK="alert(isGlasgowPostcode())">
+
+<P><INPUT TYPE=SUBMIT VALUE="Append Glasgow" ONCLICK="alert(appendGlasgowIfNotPostcode(document.demoMatch.subject.value))">
+</FORM>
+

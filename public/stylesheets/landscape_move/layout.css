@@ -1,0 +1,254 @@
+#container {width:825px;}
+
+/*
+
+-1) Block1
+-2) Block2
+-3) Block3
+
+*/
+
+#block-one {
+	margin: 0 auto;
+ 	width: 794px;
+}
+
+#block-two {
+	margin: 0 auto;
+	width: 794px;
+	padding-top: 30px;
+	height: 31em;
+}
+
+#block-two.map {
+	height: 375px;
+	padding-top: 15px;
+	padding-bottom: 8em;
+}
+
+#block-three {
+	width: 825px;
+	margin: 0 auto;
+}
+/* -----------------------------------------------------1) Block one */
+/*first header*/
+#top {
+	min-height:25px;
+}
+
+#tagline{float:left;}
+
+/* navigation */
+#nav-one {
+	font-size:2.2em;
+	list-style: none;
+	float: right;
+	margin-bottom: -1px;
+}
+
+#nav-one li {
+	padding: 0px 0 0px 10px;
+	float: left;
+}
+
+#nav-one li a{
+	list-style-type:none;
+	text-decoration:none;
+	margin-right:5px;
+}
+
+#block-one ul#nav-one li.second {
+	border-left:2px dotted;
+	border-right:2px dotted;
+	
+	padding-left:6px;
+	
+}
+
+#nav-one li a:hover{border-bottom:4px solid;}
+
+#nav-one li#current a:hover{border-bottom: 1px solid;}
+
+#nav-one li#current a{margin-right:0;}
+
+#nav-one li#current {
+	display: inline;
+	margin-left:-1px;
+	padding: 0px 11px 1px 0;
+}
+
+#nav-one li#current  span {
+	display:block;
+	padding: 0px 0px 1px 10px;
+}
+
+.nav-two {
+	float: right;
+	margin-right: 0;
+	margin-bottom: 0;
+}
+
+.nav-two li {
+	float:left;
+	list-style-type:none;
+	padding-left: 1em;
+}
+
+/* site search */
+/*In safari this places the search image below the form,
+but fixes the problem with the Jquery shadow on the map search*/
+/*
+#top-search-form * {display:inline;}
+*/
+
+div.header {
+	padding-top: 1px;
+}
+
+#greenmaplogo {
+	float:left;
+	padding-left:439px;
+	padding-top:10px;
+	display:inline;}
+
+#top-search-form fieldset#site-search{
+	border: none;
+	padding-top: 0;
+	margin: 0px;
+}
+
+#top-search-form fieldset#site-search input{
+	width:150px;
+	height:24px;
+	padding:5px;
+	line-height:100%;
+	font-size:20px;
+	border-style:solid;
+	border-color:#999;
+	border-width:1px 0 1px 1px;
+	float:left;
+	color: #bbb;
+}
+
+#top-search-form fieldset#site-search input.active{
+	color: #333;
+}
+
+#top-search-form fieldset#site-search label{
+	padding:0;
+	margin:0;
+	display:block;
+}
+/* -----------------------------------------------------2) Block Two */
+#mapjobby{z-index:99;}
+
+.block-two-text{
+	border:1px solid;
+	padding-top:10px;
+	max-height: 22em;
+	overflow: auto;
+}
+
+#overlayMap {
+	position: relative;
+}
+
+#overlayMap div#neighbourhoods {
+	display: none;
+}
+
+#map_div_main {
+	border: 1px solid #bdb;
+}
+
+/* -----------------------------------------------------2.1) Tool Tip */
+/*Dear Green Place Info */
+#greeninfo{
+	border:1px solid;
+	margin-top:20px;
+	padding-top:10px;
+}
+
+
+#tooltip{
+	position:absolute;
+	border:1px solid #333;
+	background:#f7f5d1;
+	padding:5px 9px;
+	color:#333;
+	display:none;
+	z-index: 999;
+}
+
+#tooltip {
+	text-align:left;
+}
+
+#tooltip dl {
+	margin: 0 0 0.3em;
+}
+
+#tooltip dt{
+	border-bottom:1px solid #666;
+	margin-bottom:4px;
+}
+
+#tooltip dd{
+	font-size:0.9em;
+	text-align:left;
+	line-height: 1.1;
+	margin-left: 0;
+}
+
+/* -----------------------------------------------------3) Block Three */
+/*Search Form*/
+#search {margin-top:-50px;position:relative;top:8px;left:8px;}
+
+#search .inner {position:relative;top:-8px;left:-8px;padding-top: 1px;}
+
+#search h2 {margin:10px 0;}
+
+#search form p {
+	margin: 5px 0;
+}
+
+form#first {
+	padding:0 0 20px 0;
+	margin:0px;
+}
+
+form#first input.submit{
+	width:250px;
+	padding:5px;
+	text-align:center;
+	margin:5px 0;
+}
+
+form#first input.text{
+	height:25px;
+	padding:2px;
+	line-height:100%;
+	font-size:20px;
+	width:212px;
+	margin:5px 0;
+}
+
+form#first select{
+	height:25px;
+	padding:2px;
+	line-height:100%;
+	font-size:14px;
+	width:218px;
+}
+
+form#first input.text:focus, form#first select:focus {
+	border-color: #bdb;
+}
+/* Thickbox fun */
+#TB_window br {margin:10px 0 0px 0;}
+
+#TB_window p {margin:0; padding:0 5px;}
+
+form#contact input {width:200px;}
+
+form#contact textarea {width:200px;height:180px}

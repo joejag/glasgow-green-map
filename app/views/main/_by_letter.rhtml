@@ -1,0 +1,4 @@
+<h3>Goto Shops beginning with: </h3>
+<% ('A'..'Z').each do | letter | %>
+<%= link_to letter, :controller => 'main', :action => 'list_by_letter', :params => {:letter => letter} %>
+<% end %>

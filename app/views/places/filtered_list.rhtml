@@ -1,0 +1,54 @@
+<%= render :partial => "layouts/map_nav" %>
+
+<div id="map">
+	<div style="width:794px;">
+		<%= @map.div(:width => "794", :height => 400) %>
+	</div>
+</div>
+
+<table class="PlacesListTable" border=1 cellspacing=0 cellpadding=0 width=800>
+  <tr>
+		<th></th>
+    <th>Name</th>
+    <th><div class="VolOpps"><span>Vol Opps</span></div></th>
+    <th><div class="Textiles"><span>Textiles</span></div></th>
+    <th><div class="Clothes"><span>Clothes</span></div></th>
+    <th><div class="Books"><span>Books and Music</span></div></th>
+    <th><div class="BricaBrac"><span>Bric a brac</span></div></th>
+    <th><div class="BabyWear"><span>Baby Wear</span></div></th>
+    <th><div class="SElec"><span>S. Elec</span></div></th>
+    <th><div class="LElec"><span>L. Elec</span></div></th>
+    <th><div class="SFurn"><span>S. Furn</span></div></th>
+    <th><div class="LFurn"><span>L. Furn</span></div></th>
+    <th><div class="Carpets"><span>Carpet</span></div></th>
+    <th><div class="Bikes"><span>Bikes</span></div></th>
+    <th><div class="IT"><span>IT</span></div></th>
+    <th><div class="Ink"><span>Ink</span></div></th>
+    <th><div class="Wood"><span>Wood</span></div></th>
+    <th><div class="Mobiles"><span>Mobiles</span></div></th>
+    <th><div class="EnvOrg"><span>Env Org</span></div></th>
+		<th>Distance</th>
+</tr>
+<% result_number = 1 %>
+<% for place in @places %>
+  <tr>
+		<td><strong><%= result_number %><% result_number += 1 %></strong></td>
+    <td><%= link_to place.name, :action => 'show', :id => place %></td>
+    
+<% cat_types=["Volunteering opportunities","Textiles","Clothing","Books/Music","Bric-a-brac","Baby/Kids Wear","Small Electrical","Large Electrical","Small Furniture","Large Furniture","Carpet","Bikes","IT Equipment","Ink Cartridges","Wood","Mobile Phones","Environmental Organisation"] %>
+
+<% cat_types.each do |cat_type| -%>
+    
+    <td><% if place.tags.map{ |x| x.name }.include?(cat_type) %><div><span>Yes</span></div><% end %></td>
+
+<% end -%>
+	<td><%= place.distance %> miles</td>
+
+  </tr>
+<% end %>
+</table>
+
+<p>
+<%= will_paginate @places %>
+</p>
+
